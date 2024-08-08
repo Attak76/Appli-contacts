@@ -1,0 +1,333 @@
+:root {
+
+  --primary-color: #00539f;
+  --secondary-color: #01407b;
+  --title-color: #1d1d1b;
+  --message-color: #979DAC;
+  --border-color: #ccc;
+  --alert-color: rgb(91, 9, 9);
+  --background-color: rgba(255, 255, 255, 0.8);
+  --background-color2: white;
+  --background-image: url('../assets/images/background-day.jpg');
+
+  --night-primary-color: #340b66;
+  --night-secondary-color: #3d1172;
+  --night-title-color: #ffffff;
+  --night-message-color: #ffffff;
+  --night-border-color: #573384;
+  --night-alert-color: #cf6679;
+  --night-background-color: rgba(20, 20, 20, 0.8);
+  --night-background-color2: #272330;
+  --night-background-image: url('../assets/images/background-night.jpg');
+}
+
+body.night-mode {
+  --primary-color: var(--night-primary-color);
+  --secondary-color: var(--night-secondary-color);
+  --title-color: var(--night-title-color);
+  --message-color: var(--night-message-color);
+  --border-color: var(--night-border-color);
+  --alert-color: var(--night-alert-color);
+  --background-color: var(--night-background-color);
+  --background-color2: var(--night-background-color2);
+  --background-image: var(--night-background-image);
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: var(--background-image);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+  min-height: 100vh;
+  margin: 0;
+  box-sizing: border-box; 
+  color: var(--title-color);
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.contacts-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  flex-grow: 1;
+  height: auto;
+  background-color: var(--background-color);
+  border-radius: 5px;
+  padding: 50px 100px;
+}
+
+h1 {
+  color: var(--title-color);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+::placeholder {
+  color: var(--message-color);
+  opacity: 1; 
+}
+
+/* ContactForm */
+
+.form-group {
+  width: 770px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  font-size: 0.8rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--background-color2);
+  color: var(--title-color);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  font-weight: 100;
+}
+
+.create-button {
+  padding: 15px 20px;
+  align-self: flex-end;
+  font-size: 0.8rem;
+  color: white;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-style: normal;
+  font-weight: 550;
+  margin-top: 1rem;
+}
+
+.create-button:hover {
+  background-color: var(--secondary-color);
+}
+
+.title {
+  font-size: 0.9rem;
+  margin: 5px;
+  align-self: flex-start;
+  color: var(--title-color);
+  font-style: normal;
+  font-weight: 550;
+  line-height: 1.25;
+}
+
+.required-message {
+  margin-top: 0;
+  color: var(--message-color);
+  font-style: italic;
+}
+
+/* ContactList */
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+  margin: 25px 0;
+}
+
+.list-title {
+  color: var(--title-color);
+  font-size: 0.9rem;
+  margin: 5px;
+  align-self: flex-start;
+  font-style: normal;
+  font-weight: 550;
+  line-height: 1.25;
+  margin-bottom: -10px;
+}
+
+.contact-item {
+  color: var(--title-color);
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: var(--background-color2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h2, p {
+  margin: 0;
+  text-align: left;
+}
+
+.delete-button {
+  background-color: var(--primary-color);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+  background-color: var(--alert-color);
+}
+
+.delete-icon {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s ease, animation 1s ease;
+}
+
+.delete-button:hover .delete-icon {
+  animation: shake 0.7s;
+}
+
+.empty-message {
+  margin-top: 40px;
+  color: var(--message-color);
+  font-style: italic;
+}
+
+/* ToggleButton */
+
+.toggle-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  width: 100px;
+  height: 40px;
+  background-color: #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.icon-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+.icon-container.active {
+  background-color: #fff;
+}
+
+.divider {
+  width: 1px;
+  height: 80%;
+  background-color: #aaa;
+}
+
+.sun-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.moon-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* Animations */
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-1px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(1px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+}
+
+.contact-item-enter {
+  animation: fadeIn 1s forwards;
+}
+
+.contact-item-exit {
+  animation: fadeOut 1s forwards;
+}
+
+/* Media queries */
+
+@media (max-width: 900px) {
+  .form-group {
+    width: auto;
+  }
+}
+
+@media (max-width: 750px) {
+  .contacts-container {
+    padding: 25px 25px;
+  }
+  h1 {
+    font-size: 1.7rem;
+  }
+}
+
