@@ -11,7 +11,7 @@ const ContactList = ({ contacts, removeContact }) => {
     setTimeout(() => {
       removeContact(index);
       setRemovingIndex(null);
-    }, 500); // Correspond à la durée de l'animation fadeOut
+    }, 500);
   };
 
   if (contacts.length === 0) {
