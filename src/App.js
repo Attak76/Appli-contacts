@@ -12,7 +12,7 @@ const App = () => {
   const addContact = (contact) => {
     setTimeout(() => {
       setContacts([...contacts, contact]);
-    }, 50); // Petit délai pour l'animation d'ajout
+    }, 50);
   };
 
   const removeContact = (index) => {
