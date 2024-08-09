@@ -316,9 +316,15 @@ input {
 
 /* Media queries */
 
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .form-group {
-    width: auto;
+    width: 600px;
+  }
+}
+
+@media (max-width: 880px) {
+  .form-group {
+    width: 500px;
   }
 }
 
@@ -331,3 +337,8 @@ input {
   }
 }
 
+@media (max-width:600px) {
+  .form-group {
+    width: 400px;
+  }
+}
